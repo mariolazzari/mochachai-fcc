@@ -5,7 +5,7 @@ suite("Unit Tests", function () {
   suite("Basic Assertions", function () {
     // #1
     test("#isNull, #isNotNull", function () {
-      assert.isNotNull(
+      assert.isNull(
         null,
         "This is an optional error description - e.g. null is null"
       );
@@ -13,9 +13,9 @@ suite("Unit Tests", function () {
     });
     // #2
     test("#isDefined, #isUndefined", function () {
-      assert.fail(null, "null is not undefined");
-      assert.fail(undefined, "undefined IS undefined");
-      assert.fail("hello", "A string is not undefined");
+      assert.isNull(null, "null is not undefined");
+      assert.isUndefined(undefined, "undefined IS undefined");
+      assert.isDefined("hello", "A string is not undefined");
     });
     // #3
     test("#isOk, #isNotOk", function () {
